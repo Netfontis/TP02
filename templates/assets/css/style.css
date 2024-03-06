@@ -1,0 +1,228 @@
+:root {
+	--darkpurple: #210124;
+	--claret: #750D37;
+	--purple: #DF4878;
+	--mintgreen: #DBF9F0;
+	--babypowder: #F7F9F7;
+	--gray: #A2999E;
+
+	--simpleShadow: 0px 0px 15px -5px #000000;;
+}
+
+@font-face {
+	font-family: Ubuntu;
+	src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Ubuntu;
+	transition: all 0.2s;
+}
+
+body, nav {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	padding: 50px;
+	color: var(--babypowder);
+}
+
+p {
+	color: var(--gray);
+	font-size: 1.1rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--darkpurple);
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+} a:hover {
+	color: var(--purple);
+}
+
+.p-5 {
+	padding: 5px;
+}
+
+input {
+	font-weight: bold;
+	border: none;
+	background-color: var(--gray);
+	padding: 1rem 2rem;
+	width: 70%;
+	margin: 0.5rem;
+	border-radius: 1rem;
+	color: var(--babypowder);
+}
+
+input::placeholder {
+	color: var(--babypowder);
+	font-weight: bold;
+}
+
+input:hover, input:focus {
+	width: 75%;
+	border: none;
+}
+
+input[type=radio] {
+	width: auto;
+}
+
+form {
+	margin-bottom: 1rem;
+} 
+
+#logedDiv, #unlogedDiv {
+	overflow: hidden;
+	border-radius: 10px;
+	min-width: 350px;
+	text-align: center;
+	box-shadow: var(--simpleShadow);
+	background-color: var(--babypowder);
+}
+
+#headerLoginDiv {
+	background-color: var(--darkpurple);
+}
+
+#headerUserDiv {
+	background-color: var(--darkpurple);
+}
+
+#headerUserDiv h1 {
+	color: var(--babypowder);
+}
+
+#loginContent #message {
+	color: var(--purple);
+}
+
+#loginContent, #registerContent, #accountContent {
+	padding: 1rem;
+}
+
+#loginDiv, #registerDiv, #accountDiv {
+	display: none;
+}
+
+#loginDiv.active, #registerDiv.active, #accountDiv.active {
+	display: block;
+}
+
+#forgotBtnDiv {
+	padding-right: 1rem;
+	text-align: right;
+}
+
+#sendFormBtn {
+	cursor: pointer;
+	margin-top: 1rem;
+	background-color: var(--claret);
+}
+
+#messageDiv {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	box-shadow: var(--simpleShadow);
+	border-radius: 10px;
+	min-width: 200px;
+	width: 20%;
+	overflow: hidden;
+	background-color: var(--babypowder);
+	animation: hide_message 3.5s linear;
+	opacity: 0;
+}
+
+#messageDiv p {
+	padding: 1rem 2rem;
+}
+
+#progressbar {
+	position: relative;
+	background-color: var(--gray);
+	height: 0.5rem;
+}
+
+#fillProgressbar {
+	background-color: var(--darkpurple);
+	height: 100%;
+	width: 0;
+	animation: empty_progressbar 3s linear;
+}
+
+#accountContent form, .marginTop {
+	margin: 0rem 0 0 0;
+}
+
+#accountContent table {
+	border-collapse: collapse;
+	border: 1px solid var(--darkpurple);
+	font-family: inherit;
+}
+
+#accountContent table.form {
+	border: 0;
+}
+
+#accountContent table th {
+	color: var(--darkpurple);
+}
+
+#accountContent table th, #accountContent table td {
+	padding: 5px;
+}
+
+#accountContent table tr {
+	text-align: center;
+}
+
+/*#accountContent table tr:first-child {
+	background-color: var(--darkpurple);
+	color: var(--babypowder);
+}
+
+#accountContent table tr:nth-child(even) {
+	background-color: var(--gray);
+	color: var(--babypowder);
+}
+
+#accountContent table tr:nth-child(odd) {
+	background-color: var(--babypowder);
+	color: var(--darkpurple);
+}
+
+#accountContent table tr:first-child th {
+	background-color: var(--darkpurple);
+	color: var(--babypowder);
+}*/
+
+@keyframes empty_progressbar {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0%;
+	}
+}
+
+@keyframes hide_message {
+	0% {
+		opacity: 1;
+	}
+	85% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

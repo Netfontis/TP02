@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteRule ^(.*).css$ $1.css [L]
+RewriteRule ^(.*).js$ $1.js [L]
+RewriteRule ^(.*).png$ $1.png [L]
+RewriteRule ^(.*).ttf$ $1.ttf [L]
+RewriteRule ^(.*).gif$ $1.gif [L]
+RewriteRule ^(.*)$ requestHandler.php [L]
